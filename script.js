@@ -13,6 +13,8 @@ const checkRequired = (inputArray) => {
           1
         )} Không được để trống`
       );
+    } else {
+      showSuccess(item);
     }
   });
 };
@@ -37,22 +39,16 @@ const showSuccess = (input, message) => {
 const checkLength = (input, min, max) => {
   if (input.value.length < min || input.value.length > max) {
     showError(input, `Phải có độ dài từ ${min}  đến ${max}`);
-  } else {
-    showSuccess(input, "ok roi do ");
   }
 };
 const checkeEmailer = (input) => {
   if (!isValidEmail(input.value)) {
     showError(input, "Email không đúng định dạng");
-  } else {
-    showSuccess(input);
   }
 };
 const checkConfirmPassword = (input, input2) => {
   if (input.value !== input2.value) {
     showError(input2, "password không khớp");
-  } else {
-    showSuccess(input2);
   }
 };
 
